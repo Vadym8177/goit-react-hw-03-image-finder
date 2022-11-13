@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { createPortal } from 'react-dom';
 import css from '../../components/styles.module.css';
+import PropTypes from 'prop-types';
 
 const modal = document.querySelector('#modal');
 export class Modal extends Component {
@@ -37,3 +38,7 @@ export class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  showModal: PropTypes.bool,
+};

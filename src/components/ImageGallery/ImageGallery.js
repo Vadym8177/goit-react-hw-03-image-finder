@@ -5,8 +5,8 @@ export function ImageGallery({ images }) {
   return (
     <>
       <ul className={css.ImageGallery}>
-        {images.map(({ id, ...children }) => (
-          <ImageGalleryItem key={id} {...children} />
+        {images.map(({ id, ...props }) => (
+          <ImageGalleryItem key={id} {...props} />
         ))}
       </ul>
     </>

@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { FaSistrix } from 'react-icons/fa';
 import css from '../../components/styles.module.css';
+import PropTypes from 'prop-types';
 
 export class Searchbar extends Component {
   state = {
@@ -45,3 +46,7 @@ export class Searchbar extends Component {
     );
   }
 }
+
+Searchbar.propTypes = {
+  imgName: PropTypes.string,
+};
