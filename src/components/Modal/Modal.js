@@ -28,10 +28,11 @@ export class Modal extends Component {
   };
 
   render() {
+    const { image } = this.props;
     return createPortal(
       <div className={css.Overlay} onClick={this.onBackDropClick}>
         <div>
-          <img src={this.props.image} alt="#" className={css.Modal} />
+          <img src={image} alt="#" className={css.Modal} />
         </div>
       </div>,
       modal
@@ -41,4 +42,5 @@ export class Modal extends Component {
 
 Modal.propTypes = {
   showModal: PropTypes.bool,
+  image: PropTypes.string,
 };

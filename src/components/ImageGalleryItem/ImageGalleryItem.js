@@ -14,18 +14,19 @@ export class ImageGalleryItem extends Component {
     }));
   };
   render() {
+    const { webformatURL, tags, largeImageURL } = this.props;
     return (
       <>
         <li className={css.ImageGalleryItem}>
           <img
-            src={this.props.webformatURL}
-            alt={this.props.tags}
+            src={webformatURL}
+            alt={tags}
             className={css.ImageGalleryItemImage}
             onClick={this.toggleModal}
           />
         </li>
         {this.state.showModal && (
-          <Modal onClose={this.toggleModal} image={this.props.largeImageURL} />
+          <Modal onClose={this.toggleModal} image={largeImageURL} />
         )}
       </>
     );
@@ -34,4 +35,7 @@ export class ImageGalleryItem extends Component {
 
 ImageGalleryItem.propTypes = {
   showModal: PropTypes.bool,
+  webformatURL: PropTypes.string,
+  tags: PropTypes.string,
+  largeImageURL: PropTypes.string,
 };

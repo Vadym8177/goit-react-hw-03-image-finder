@@ -14,12 +14,10 @@ export class App extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    if (
-      prevState.imgName !== this.state.imgName ||
-      prevState.page !== this.state.page
-    ) {
+    const { imgName, page } = this.state;
+    if (prevState.imgName !== imgName || prevState.page !== page) {
       this.setState({ isLoading: true });
-      fetch(`https://pixabay.com/api/?q=${this.state.imgName}&page=${this.state.page}&key=29444023-fe7d4e5e60b2e765be0bef471&image_type=photo&orientation=horizontal&per_page=12
+      fetch(`https://pixabay.com/api/?q=${imgName}&page=${page}&key=29444023-fe7d4e5e60b2e765be0bef471&image_type=photo&orientation=horizontal&per_page=12
 `)
         .then(r => {
           if (r.ok) {

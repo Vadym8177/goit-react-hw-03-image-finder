@@ -14,12 +14,13 @@ export class Searchbar extends Component {
 
   onFormSubmit = e => {
     e.preventDefault();
+    const { imgName } = this.state;
 
-    if (this.state.imgName.trim() === '') {
+    if (imgName.trim() === '') {
       alert('введите хоть что-то');
       return;
     }
-    this.props.onSubmit(this.state.imgName);
+    this.props.onSubmit(imgName);
     this.setState({ imgName: '' });
   };
   render() {
@@ -49,4 +50,5 @@ export class Searchbar extends Component {
 
 Searchbar.propTypes = {
   imgName: PropTypes.string,
+  onSubmit: PropTypes.func,
 };
