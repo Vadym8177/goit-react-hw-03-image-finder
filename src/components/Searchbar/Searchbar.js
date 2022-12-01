@@ -4,6 +4,11 @@ import css from '../../components/styles.module.css';
 import PropTypes from 'prop-types';
 
 export class Searchbar extends Component {
+  static propTypes = {
+    state: PropTypes.shape({ imgName: PropTypes.string.isRequired }),
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   state = {
     imgName: '',
   };
@@ -47,8 +52,3 @@ export class Searchbar extends Component {
     );
   }
 }
-
-Searchbar.propTypes = {
-  imgName: PropTypes.string,
-  onSubmit: PropTypes.func,
-};

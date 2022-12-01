@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 
 const modal = document.querySelector('#modal');
 export class Modal extends Component {
-  state = {
-    showModal: false,
+  static propTypes = {
+    image: PropTypes.string.isRequired,
+    onClose: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
@@ -39,8 +40,3 @@ export class Modal extends Component {
     );
   }
 }
-
-Modal.propTypes = {
-  showModal: PropTypes.bool,
-  image: PropTypes.string,
-};

@@ -4,6 +4,12 @@ import css from '../../components/styles.module.css';
 import PropTypes from 'prop-types';
 
 export class ImageGalleryItem extends Component {
+  static propTypes = {
+    state: PropTypes.shape({ showModal: PropTypes.bool.isRequired }),
+    webformatURL: PropTypes.string,
+    tags: PropTypes.string,
+    largeImageURL: PropTypes.string,
+  };
   state = {
     showModal: false,
   };
@@ -32,10 +38,3 @@ export class ImageGalleryItem extends Component {
     );
   }
 }
-
-ImageGalleryItem.propTypes = {
-  showModal: PropTypes.bool,
-  webformatURL: PropTypes.string,
-  tags: PropTypes.string,
-  largeImageURL: PropTypes.string,
-};
