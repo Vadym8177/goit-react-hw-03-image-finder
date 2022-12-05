@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 
 export function ImageGallery({ images }) {
   return (
-    <>
-      <ul className={css.ImageGallery}>
-        {images.map(({ id, ...props }) => (
-          <ImageGalleryItem key={id} {...props} />
-        ))}
-      </ul>
-    </>
+    <ul className={css.ImageGallery}>
+      {images.map(({ id, ...props }) => (
+        <ImageGalleryItem key={id} {...props} />
+      ))}
+    </ul>
   );
 }
 

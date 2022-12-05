@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 export class Searchbar extends Component {
   static propTypes = {
-    state: PropTypes.shape({ imgName: PropTypes.string.isRequired }),
     onSubmit: PropTypes.func.isRequired,
   };
 
